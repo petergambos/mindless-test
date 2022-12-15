@@ -260,7 +260,7 @@ Za tu dobu jsem navyhnutelně prošel nespočitatelnou hromadou firem, projektů
             progressiveLoad:false,
             preserveAspectRatio: 'xMidYMid slice'
         },
-        path: 'https://raw.githubusercontent.com/petergambos/mindless-test/main/animation2.json'
+        path: 'animation2.json'
     };
     anim = bodymovin.loadAnimation(animData);
     
