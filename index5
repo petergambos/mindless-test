@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js" integrity="sha512-17otjw7eTNU9MtpB7mFfXEwB6yDjA2qjDFkKSvsywI1PRAgpyOo+cp/wPSE/1kK4fFjA9OKsZVO1tr93MGNCEw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+<style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    
+    body {
+  background-color: rgb(var(--r1),var(--g1),var(--b1));
+  font-family: "Azeret Mono", monospace;
+  width:auto;
+}
+    
+    h1 {
+  margin-top:12.5%;
+  margin-bottom:6.5%;
+  font-weight: 700;
+  font-size: 13.2em;
+  line-height: 1;
+}
+    
+    h2 {
+  margin-top:0.6em;
+  margin-bottom:0.3em;
+  font-weight: 600;
+  font-size: 5.5em;
+  line-height: 1;
+}
+    
+    h3 {
+  margin-top:0.6em;
+  margin-bottom:0.2em;
+  font-weight: 600;
+  font-size: 4.5em;
+  line-height: 1;
+}
+    
+    p {
+  font-weight: 300;
+  font-size: 1.4em;
+  
+}
+    
+    .right {
+  text-align: right;
+  
+}
+    
+    .center {
+  text-align: center;
+  
+}
+    
+    .letter-fill {
+  fill: rgb(var(--r),var(--g),var(--b));
+}
+    
+    #contentid {
+  width: auto;
+  height: 100%;
+  margin: 3%;
+  
+}
+    
+    #bodymovin {
+  
+  width: 95%;
+  height: auto;
+  z-index: -1;
+  position: fixed;
+  align-content: center;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  
+}
+    
+    #toggle {
+  display: none;
+}
+
+/**
+  Hamburger
+**/
+.hamburger {
+  position: fixed;
+  top: 4em;
+  right: 4%;
+  margin-right: 2.2em;
+  margin-top: 1.2em;
+  width: 2em;
+  height: 45px;
+  z-index: 5;
+}
+
+.hamburger div {
+  position: relative;
+  width: 3.7em;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgb(0,0,0);
+  margin-top: 11px;
+  transition: all 0.3s ease-in-out;
+}
+
+/**
+Nav Styles
+**/
+.nav {
+  position: fixed;
+  width: 15%;
+  height: auto;
+  background-color: rgb(0,0,0);
+  right: 3.8%; 
+  top: 6%;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0);
+  
+}
+.nav-wrapper {
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  height: auto;
+}
+nav {
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 4.5%;
+  margin-bottom: 6%;
+}
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(var(--r1),var(--g1),var(--b1));
+  font-size: 1.5em;
+  display: inline-block;
+  margin-top: 0.4em;
+  transition: color 0.15s ease-in-out;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: rgb(var(--r),var(--g),var(--b));
+}
+
+
+        
+#toggle:hover + .hamburger div {
+  background-color: rgb(var(--r),var(--g),var(--b));
+}
+    
+#toggle:checked:hover + .hamburger div {
+  background-color: rgb(var(--r),var(--g),var(--b));
+}
+/**
+Animations
+**/
+#toggle:checked + .hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 25px;
+  background-color: rgb(var(--r1),var(--g1),var(--b1));
+}
+#toggle:checked + .hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+#toggle:checked + .hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -7px;
+  background-color: rgb(var(--r1),var(--g1),var(--b1));
+}
+
+#toggle:checked + .hamburger + .nav {
+  /*top: 0;*/
+  transform: scale(1);
+}
+</style>
+</head>
+
+
+
+<body>
+    
+<div id="bodymovin">
+</div>
+    
+
+
+<div id="contentid">
+    
+<input id="toggle" type="checkbox">
+
+<label for="toggle" class="hamburger">
+  <div class="top-bun"></div>
+  <div class="meat"></div>
+  <div class="bottom-bun"></div>
+</label>
+
+<div class="nav">
+  <div class="nav-wrapper">
+    <nav>
+      <a href="#contentid">uvod</a><br>
+      <a href="#2">o mně</a><br>
+      <a href="#3">reference</a><br>
+      <a href="#4">kontakty</a>
+    </nav>
+  </div>
+</div>
+    
+<h1 id="1">Welcome to<br>mindless<br>world!</h1>
+<p id="2">Reklamou a marketingem se v různých podobách živím víc jak 20 let. 
+Za tu dobu jsem navyhnutelně prošel nespočitatelnou hromadou firem, projektů, prezentací, workshopů, výher, proher, úspěchů i fatálních chyb a průšvihů. Marketing je svým způsobem mindless, ale jinak svou rodinu uživit neumím. A tak spolu toto tango jedeme dál a dál.
+<br>Třeba vás to inspiruje pro spolupráci, přednášku, workshop nebo... poslání k čertu.</p>
+<h2 class="right">brand</h2>
+<h2 class="right">strategy</h2>
+<h2 class="right">marketing</h2>
+<h2 class="right">consulting</h2>
+<h2 class="right">whatever</h2>
+<div class="right">
+    <img style="max-width: 25%; margin-bottom: 3em; margin-top: 3em" src="https://raw.githubusercontent.com/petergambos/mindless-test/main/karel_foto.jpg">
+</div>
+<h3 id="3">reference</h3>
+<p>AdVisio marketing, AGROTEC, Aligator, alza.cz, ANECT, APACHE, ArkAdiA, Aukro, Authentica, Axiory Services, Barta.bike, BARTON STUDIO, Bytecheck, ČESKÁ TELEVIZE, Check Point, CLOUD 150, CYRRUS, CzechInvest, DIRECT PEOPLE, Dixons Retail, eBRÁNA, EDUA Group, EDWARDS, EF1, effectix.com, Embraco, eyerim, FC Baník Ostrava, Feedyou, Filosofická Fakulta MU, Flaviol, Geneea Analytics, Google Czech Republic, Hill + Knowlton Strategies, House of Řezáč, IDONA, igloonet, iMi Partner, IPA Slovakia, JAGA GROUP, JIC, K2 atmitec, Kentico software, Komora daňových poradců České Republiky, Komorní scéna Aréna, KROUPAHELÁN advokátní kancelář, Lékaři bez hranic, LMC, Marketinger, MBtech, MCAE Systems, MIBO SCOOTERS, Michelle Losekoot, Minit, Motionhouse, Netbox, netdevelo, NEWTON College, NOTINO, NOTUS - POWERSONIC, OEZ, Palmknihy, PetCenter, Proficio, PROWORK, První brněnská strojírna Velká Bíteš, První rodinná, Purple Technology, QAYRON, Radio Free Europe/Radio Liberty, Radynacestu, RAYNET, REMAK, REMOSKA, Robodrone, Roltechnik, Růžový slon, seznam.cz, Shoptet, Stell+ERP, STRV, Studio Animato, SURREALIS, Talentwork, Teesys, Twisto, V-PODLAHY, VERNE TRAVEL, videolektor.cz, WEBGARDEN, WIN WIN JOB, YASHICA, ZELENKA, Zelenka & Kovanic, Zetor, Značkové nádobí</p>
+<h3 id="4">kontakty</h3>
+<p>+420 605 204 252</p>
+<p><a href="mailto:contact@mindless.cz">contact@mindless.cz</a></p>
+<p><a href="https://www.linkedin.com/in/novotnykarel" target="_blank">www.linkedin.com/in/novotnykarel</a></p>
+<p><a href="https://www.brand.family" target="_blank">www.brand.family</a></p>
+
+  
+    
+</div>
+    
+   
+</body>
+
+</html>
+
+
+
+<script>
+
+    var anim;
+    var elem = document.getElementById('bodymovin')
+    var animData = {
+        container: elem,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        rendererSettings: {
+            progressiveLoad:false,
+            preserveAspectRatio: 'xMidYMid slice'
+        },
+        path: 'https://raw.githubusercontent.com/petergambos/mindless-test/main/animation2.json'
+    };
+    anim = bodymovin.loadAnimation(animData);
+    
+    document.addEventListener('mousemove', e => { 
+        var x = Math.round((e.clientX / window.innerWidth) * 100);
+        var y = Math.round((e.clientY / window.innerHeight) * 100);
+        //e.clientX / $(window).width();
+        //e.clientY / $(window).height();
+        anim.goToAndStop( (x / 100) * 900, true);
+    }); 
+</script>
+
+<script>
+    document.documentElement.style.setProperty('--r', 255);
+    document.documentElement.style.setProperty('--g', 255);
+    document.documentElement.style.setProperty('--b', 72);
+    document.documentElement.style.setProperty('--r1', 215);
+    document.documentElement.style.setProperty('--g1', 186);
+    document.documentElement.style.setProperty('--b1', 244);
+    
+    addEventListener("scroll", (event) => {
+    $(window).scroll(function() {
+
+        // calculate the percentage the user has scrolled down the page
+        var scrollPercent = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
+
+      
+        //console.log(anim.currentRawFrame);
+    
+     
+        scrollPercentRounded = Math.round(scrollPercent);
+        
+            document.documentElement.style.setProperty('--r', 255 - (scrollPercentRounded/100*0));
+            document.documentElement.style.setProperty('--g', 255 - (scrollPercentRounded/100*76));
+            document.documentElement.style.setProperty('--b', 72 + (scrollPercentRounded/100*107));
+            document.documentElement.style.setProperty('--r1', 215 - (scrollPercentRounded/100*187));
+            document.documentElement.style.setProperty('--g1', 186 + (scrollPercentRounded/100*46));
+            document.documentElement.style.setProperty('--b1', 244 - (scrollPercentRounded/100*216));
+        });
+        
+        
+
+        
+        //console.log(scrollPercentRounded);
+       
+        //console.log( (scrollPercentRounded / 100) * anim.totalFrames );
+        
+        });
+    
+
+</script>
+
+
+
